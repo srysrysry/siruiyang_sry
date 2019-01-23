@@ -35,7 +35,6 @@ struct Splay{
     int getf(int k){return tr[tr[k].f].ch[1]==k;}
     void rotate(int k){
         int f1=tr[k].f,f2=tr[f1].f;bool d=getf(k);
-        pushdown(f1),pushdown(k);
         tr[f1].ch[d]=tr[k].ch[d^1];tr[tr[k].ch[d^1]].f=f1;
         tr[k].ch[d^1]=f1;tr[f1].f=k;tr[k].f=f2;
         if(f2) tr[f2].ch[tr[f2].ch[1]==f1]=k;
