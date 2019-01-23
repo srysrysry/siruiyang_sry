@@ -68,7 +68,8 @@ struct LCT{
             pushdown(k);
             if(tr[k].ch[0]) k=tr[k].ch[0];
             else break;
-        }return k;
+        }
+		return k;
     }
     inline void split(int x,int y){/*打通一条x->y的路径*/
         makeroot(x);
