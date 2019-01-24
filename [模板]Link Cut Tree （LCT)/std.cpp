@@ -82,7 +82,7 @@ struct LCT{
     }
     inline void cut(int x,int y){/*切断x,y的边 把x,y放在一颗splay上，然后就进行判断即可*/
         makeroot(x);
-        if(findroot(y)==x&&tr[x].f==y){
+        if(findroot(y)==x&&tr[x].f==y&&!tr[x].ch[1]){
             tr[x].f=tr[y].ch[0]=0;
             update(y);
         }return;
